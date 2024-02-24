@@ -24,6 +24,4 @@ This license guarantees that you're safe when using PPformer in your work, for t
 This license guarantees that PPformer will remain available free of charge for nonprofit use.
 You can modify PPformer to your purposes, and you can also share your modifications.
 
-If you would like to use PPformer in commercial settings, contact us so we can discuss options. Send an email to waqas.zamir@inceptioniai.org
-
-
+If you would like to use PPformer in commercial settings, contact us so we can discuss options. Send an email to dj.chen112@gmail.com

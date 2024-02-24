@@ -79,7 +79,7 @@ python evaluation.py -dirA images_folder_path -dirB images_folder_path -type ima
 <summary><b>Qualitative Evaluation.</b></summary>
 
 ![result3](./figure/visual1.png)
-![result4](./figure/result2.png) 
+![result4](./figure/visual2.png) 
 
 
 </details>  
