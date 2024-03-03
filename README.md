@@ -1,6 +1,6 @@
 # [CVIU] [PPformer: Using pixel-wise and patch-wise cross-attention for low-light image enhancement](https://www.sciencedirect.com/science/article/abs/pii/S1077314224000110)  
 
-## [Jiachen Dang](https://github.com/DenijsonC), Yong Zhong, Xiaolin Qing
+## [Jiachen Dang](https://github.com/DenijsonC), Yong Zhong, Xiaolin Qin
 [![official_paper](https://img.shields.io/badge/PDF-Paper-blue)](https://www.sciencedirect.com/science/article/abs/pii/S1077314224000110)
 #### News
 - **02.24, 2024:** Codes and weights have been released. Feel free to use them. 🚀⭐
