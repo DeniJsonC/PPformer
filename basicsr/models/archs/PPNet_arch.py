@@ -229,7 +229,7 @@ class TransformerBlock(nn.Module):
         return y
 
 
-class FFB(nn.Module):
+class WEMsub(nn.Module):
     def __init__(self, in_dim,out_dim,bias=False,proj_drop=0.,norm=LayerNorm):
         super().__init__()
  
@@ -264,14 +264,14 @@ class FFB(nn.Module):
         x = self.proj_drop(x)           
         return x
 
-class FEB(nn.Module):
+class WEM(nn.Module):
 
     def __init__(self, norm_dim,dim, mlp_ratio=2., bias=False,  attn_drop=0.,
                  drop_path=0., act_layer=nn.PReLU, norm_layer=LayerNorm,):
         super().__init__()
         self.norm1=norm_layer(norm_dim)
         self.conv=nn.Conv2d(norm_dim,dim,1,1,0,bias=bias)
-        self.block = FFB(norm_dim,dim,bias=bias,norm=norm_layer)
+        self.block = WEMsub(norm_dim,dim,bias=bias,norm=norm_layer)
         self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
         self.norm2 = norm_layer(dim)
         mlp_hidden_dim = int(dim * mlp_ratio)
@@ -290,7 +290,7 @@ def basic_blocks(embed_dims, index, layers,mlp_ratio=3., bias=False,  attn_drop=
     for block_idx in range(layers[index]):
         block_dpr = drop_path_rate * (block_idx + sum(layers[:index])) / (sum(layers) - 1)
         norm_index=idx-1
-        blocks.append(FEB(embed_dims[norm_index],embed_dims[idx], mlp_ratio=mlp_ratio, bias=bias, 
+        blocks.append(WEM(embed_dims[norm_index],embed_dims[idx], mlp_ratio=mlp_ratio, bias=bias, 
                       attn_drop=attn_drop, drop_path=block_dpr, norm_layer=norm_layer,))
     blocks = nn.Sequential(*blocks)
     return blocks 
